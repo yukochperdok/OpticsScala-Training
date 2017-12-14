@@ -137,4 +137,30 @@ class OpticsTest extends FlatSpecLike
     OptionalOptic.increaseOptionHead(List.empty) shouldBe None
   }
 
+  "The setAllList" should "set value to all element's list" in {
+    TransversalOptic.setAllList(List(1,2,3),5) shouldBe List(5,5,5)
+  }
+
+  "The getAllList" should "retrieve all element's list" in {
+    TransversalOptic.getAllList(List(1,2,3)) shouldBe List(1,2,3)
+  }
+
+  "The getHeadOption" should "retrieve element's head of list" in {
+    TransversalOptic.getHeadOption(List(1,2,3)) shouldBe Some(1)
+  }
+
+  "The increaseUnitAllList" should "increase one unit of all element's list" in {
+    TransversalOptic.increaseUnitAllList(List(1,2,3)) shouldBe List(2,3,4)
+  }
+
+  "The findElementGreater3List" should "find the first element greater than 3 on all element's list" in {
+    TransversalOptic.findElementGreater3List(List(1,2,3)) shouldBe None
+    TransversalOptic.findElementGreater3List(List(1,2,3,4,5)) shouldBe Some(4)
+  }
+
+  "The allElementGreater3List" should "return true if all elements are greater than 3 on list" in {
+    TransversalOptic.allElementGreater3List(List(1,2,3)) shouldBe false
+    TransversalOptic.allElementGreater3List(List(5,6,7)) shouldBe true
+  }
+
 }

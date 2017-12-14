@@ -2,7 +2,9 @@ package org.optics
 
 import monocle.Iso
 
-
+/**
+  * An Iso is an optic which converts elements of type S into elements of type A without loss.
+  */
 object IsoOptic {
 
   val streetToTuple = Iso[Street,(Int,String)](s => (s.number, s.name)){case (number, name) => Street(number,name)}

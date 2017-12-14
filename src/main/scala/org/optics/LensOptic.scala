@@ -3,7 +3,10 @@ package org.optics
 import monocle.Lens
 import monocle.macros.GenLens
 
-
+/**
+  * A Lens is an optic used to zoom inside a Product, e.g. case class, Tuple, HList or even Map.
+  * Lenses have two type parameters generally called S and A: Lens[S, A] where S represents the Product and A an element inside of S.
+  */
 object LensOptic{
 
   val streetLens: Lens[Street,String] = GenLens[Street](_.name)

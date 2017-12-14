@@ -4,6 +4,12 @@ import monocle.Prism
 import monocle.macros.{GenIso, GenPrism}
 import monocle.std.double.doubleToInt
 
+/**
+  * An Optional is an Optic used to zoom inside a Product, e.g. case class, Tuple, HList or even Map. Unlike the Lens, the element that the
+  * Optional focuses on may not exist.
+  * Optionals have two type parameters generally called S and A: Optional[S, A] where S represents the Product and A an optional element
+  * inside of S.
+  */
 object PrismOptic {
   //Funcion parcial. Solo aplica a los tipos Str el resto devuelve None
   val stringPrism: Prism[Data, String] = Prism.partial[Data, String]{case Str(v) => v}(Str)
